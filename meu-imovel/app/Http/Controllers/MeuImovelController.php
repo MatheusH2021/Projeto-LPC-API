@@ -87,7 +87,7 @@ class MeuImovelController extends Controller
     }
     
     /*- Pagina inicial recebendo os imoveis da API -*/
-    public function home()
+    public function home($id = null)
     {
         $http = new \GuzzleHttp\Client();
 
@@ -98,7 +98,7 @@ class MeuImovelController extends Controller
         ];
 
         /*- Consultando a API -*/
-        $response = $http->get('https://api.softpop.com.br/public/api/v1/imovel',[
+        $response = $http->get("https://api.softpop.com.br/public/api/v1/imovel?page={$id}",[
             'headers'=>$header,
         ]);
 

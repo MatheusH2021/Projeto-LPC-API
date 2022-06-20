@@ -26,7 +26,7 @@ Route::namespace('App\Http\Controllers')->group(function(){
     Route::middleware('validateUser')->group(function(){
         
         /*- Rotas de view -*/
-        Route::get('/home', 'MeuImovelController@home')->name('home');
+        Route::get('/home/{id?}', 'MeuImovelController@home')->name('home');
         Route::get('/logout', 'MeuImovelController@logout')->name('logout');
         Route::get('/editar/{id}', 'MeuImovelController@editar')->name('editar');
         Route::get('/cadastrar', 'MeuImovelController@cadastrar')->name('cadastrar');

@@ -14,7 +14,7 @@
                 <div class="card">
                     <div class="row">
                         <div class="col-lg-3">
-                            <img width="100%" src="imgs/download.jpg" alt="property image">
+                            <img width="100%" src="{{asset('imgs/download.jpg')}}" alt="property image">
                         </div>
                         <div class="col-lg-6">
                             <h3>{{ $imovel['titulo'] }} #{{ $imovel['id'] }}</h3>
@@ -23,10 +23,7 @@
                             <br>
                             <span><strong>Conteudo: </strong>{{ $imovel['conteudo'] }}</span>
                             <br>
-                            @php
-                                $valor = number_format($imovel['price'], 2, ',', '.');
-                            @endphp
-                            <span><strong>Preço: R$ </strong>{{ $valor }}</span>
+                            <span><strong>Preço: R$ </strong>{{ $imovel['price'] }}</span>
                             <br>
                             <span><strong>QTD de Quartos: </strong>{{ $imovel['quarto'] }}</span>
                             <br>
@@ -44,9 +41,15 @@
                     </div>   
                 </div>
                 @endforeach
+                <div class="paginate text-center">
+                    <a class="btn btn-success btn-sm" href="{{route('home', 1)}}">1</a><a class="btn btn-success btn-sm"href="{{route('home', 2)}}">2</a><a class="btn btn-success btn-sm"  href="{{route('home', 3)}}">3</a><a class="btn btn-success btn-sm"href="{{route('home', 4)}}">4</a>
+                </div>
             @else
             <div class="empty card text-center">
                 <h4 class="text-center">Nenhum imovel cadastrado</h4>
+            </div>
+            <div class="paginate text-center">
+                    <a class="btn btn-success btn-sm" href="{{route('home', 1)}}">1</a><a class="btn btn-success btn-sm"href="{{route('home', 2)}}">2</a><a class="btn btn-success btn-sm"  href="{{route('home', 3)}}">3</a><a class="btn btn-success btn-sm"href="{{route('home', 4)}}">4</a>
             </div>
             @endif
         </div>
