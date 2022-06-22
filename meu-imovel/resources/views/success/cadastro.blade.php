@@ -1,6 +1,6 @@
 @extends('layout.messages-base')
 
-@section('message-title', 'OK - Deletado com Sucesso!')
+@section('message-title', 'OK - Imovel cadastrado com sucesso!')
 
 @section('message-content')
     

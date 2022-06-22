@@ -10,7 +10,7 @@
                <h1>Meus Imoveis</h1>
             </div>
             @if (!empty($itens))
-                @foreach ($itens as $imovel)
+                @foreach ($itens['data'] as $imovel)
                 <div class="card">
                     <div class="row">
                         <div class="col-lg-3">
@@ -42,14 +42,13 @@
                 </div>
                 @endforeach
                 <div class="paginate text-center">
-                    <a class="btn btn-success btn-sm" href="{{route('home', 1)}}">1</a><a class="btn btn-success btn-sm"href="{{route('home', 2)}}">2</a><a class="btn btn-success btn-sm"  href="{{route('home', 3)}}">3</a><a class="btn btn-success btn-sm"href="{{route('home', 4)}}">4</a>
+                    @for($i=1; $i<=$itens['last_page'];$i++)
+                    <a class="btn btn-success btn-sm" href="{{route('home', $i)}}">{{$i}}</a>
+                    @endfor
                 </div>
             @else
             <div class="empty card text-center">
                 <h4 class="text-center">Nenhum imovel cadastrado</h4>
-            </div>
-            <div class="paginate text-center">
-                    <a class="btn btn-success btn-sm" href="{{route('home', 1)}}">1</a><a class="btn btn-success btn-sm"href="{{route('home', 2)}}">2</a><a class="btn btn-success btn-sm"  href="{{route('home', 3)}}">3</a><a class="btn btn-success btn-sm"href="{{route('home', 4)}}">4</a>
             </div>
             @endif
         </div>

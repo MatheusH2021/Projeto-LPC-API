@@ -106,7 +106,7 @@ class MeuImovelController extends Controller
         $result = json_decode((string)$response->getBody(), true);
 
         // return dd($result);
-        return view('home')->with(['itens'=>$result['data']]);
+        return view('home')->with(['itens'=>$result]);
         
     }
     
