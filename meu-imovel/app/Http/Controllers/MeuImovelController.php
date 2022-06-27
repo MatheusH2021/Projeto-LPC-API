@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-/*-handle-guzzle-exception-and-get-http-body-*/
-
-// use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
